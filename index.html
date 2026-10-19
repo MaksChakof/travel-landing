@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travlog — travel top destination of the world</title>
+  <meta name="description" content="Travlog — a responsive travel landing page built from a Figma design: top destinations, services, testimonials and a newsletter.">
+  <link rel="icon" href="img/logo-mark.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Значки: описаны один раз, подставляются через <use> -->
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5-4.8-4.6 6.6-.9z" fill="currentColor"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="M10 8.5v7l6-3.5z" fill="#fff"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 10.5l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M9 6V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1h3a2 2 0 0 1 2 2v3H4V8a2 2 0 0 1 2-2h3zm2 0h2V5h-2v1zM4 13h16v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4z" fill="currentColor"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="#top" aria-label="Travlog — home">
+        <img src="img/logo-mark.png" srcset="img/logo-mark@2x.png 2x" width="42" height="42" alt="">
+        <span>Travlog</span>
+      </a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+      </button>
+
+      <nav class="site-nav" id="site-menu" aria-label="Main">
+        <ul class="site-nav__links">
+          <li><a href="#top" aria-current="page">Home</a></li>
+          <li><a href="#destinations">Discover</a></li>
+          <li><a href="#services">Special Deals</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="site-nav__actions">
+          <a class="link-strong" href="#newsletter">Log In</a>
+          <a class="button button--primary button--small" href="#newsletter">Sign Up</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== Первый экран ===== -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="chip chip--accent">
+            Explore the world!
+            <svg class="icon icon--small" aria-hidden="true"><use href="#i-briefcase"></use></svg>
+          </p>
+          <h1 class="hero__title" id="hero-title">Travel <span class="text-accent">top destination</span> of the world</h1>
+          <p class="hero__lead">We always make our customer happy by providing as many choices as possible</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#destinations">Get Started</a>
+            <a class="button button--outline" href="#features">
+              <svg class="icon icon--play" aria-hidden="true"><use href="#i-play"></use></svg>
+              Watch Demo
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__media">
+          <img src="img/hero-collage.jpg"
+               srcset="img/hero-collage.jpg 815w, img/hero-collage@2x.jpg 1630w"
+               sizes="(min-width: 1200px) 54vw, 100vw"
+               width="815" height="737" fetchpriority="high"
+               alt="Travel photos: a whitewashed street above the sea, a hiker resting in the mountains and a traveller photographing a city">
+        </div>
+      </div>
+
+      <img class="hero__triangles" src="img/triangles.png" srcset="img/triangles@2x.png 2x" width="69" height="174" alt="">
+
+      <div class="container">
+        <ul class="partners" aria-label="Our partners">
+          <li><img src="img/partner-tripadvisor.png" srcset="img/partner-tripadvisor@2x.png 2x" width="216" height="36" alt="Tripadvisor"></li>
+          <li><img src="img/partner-expedia.png" srcset="img/partner-expedia@2x.png 2x" width="117" height="36" alt="Expedia"></li>
+          <li><img src="img/partner-booking.png" srcset="img/partner-booking@2x.png 2x" width="193" height="35" alt="Booking.com"></li>
+          <li><img src="img/partner-airbnb.png" srcset="img/partner-airbnb@2x.png 2x" width="107" height="36" alt="Airbnb"></li>
+          <li><img src="img/partner-orbitz.png" srcset="img/partner-orbitz@2x.png 2x" width="184" height="57" alt="Orbitz"></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Услуги ===== -->
+    <section class="services section" id="services" aria-labelledby="services-title">
+      <div class="container services__inner">
+        <div class="section-head services__head">
+          <p class="eyebrow">Services</p>
+          <h2 class="section-title" id="services-title">Our top value categories for you</h2>
+        </div>
+        <ul class="services__track">
+          <li class="service-card">
+            <img src="img/icon-guide.png" srcset="img/icon-guide@2x.png 2x" width="68" height="68" alt="">
+            <h3>Best Tour Guide</h3>
+            <p>What looked like a small patch of purple grass, above five feet.</p>
+          </li>
+          <li class="service-card service-card--raised">
+            <img src="img/icon-booking.png" srcset="img/icon-booking@2x.png 2x" width="67" height="68" alt="">
+            <h3>Easy Booking</h3>
+            <p>Square, was moving across the sand in their direction.</p>
+          </li>
+          <li class="service-card">
+            <img src="img/icon-weather.png" srcset="img/icon-weather@2x.png 2x" width="64" height="64" alt="">
+            <h3>Weather Forecast</h3>
+            <p>What looked like a small patch of purple grass, above five feet.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Направления ===== -->
+    <section class="destinations section" id="destinations" aria-labelledby="destinations-title">
+      <div class="container">
+        <div class="destinations__head">
+          <div class="section-head">
+            <p class="eyebrow">Top destination</p>
+            <h2 class="section-title" id="destinations-title">Explore top destination</h2>
+          </div>
+          <div class="arrows">
+            <button class="arrow" type="button" data-scroll="-1" aria-controls="destinations-track" aria-label="Previous destinations">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+            </button>
+            <button class="arrow arrow--primary" type="button" data-scroll="1" aria-controls="destinations-track" aria-label="Next destinations">
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+            </button>
+          </div>
+        </div>
+
+        <ul class="destinations__track" id="destinations-track" tabindex="0" aria-label="Destinations, scrolls sideways">
+          <li class="dest-card">
+            <img src="img/dest-beach.jpg" srcset="img/dest-beach.jpg 373w, img/dest-beach@2x.jpg 746w" sizes="(min-width: 1200px) 373px, (min-width: 720px) 33vw, 85vw" width="373" height="350" loading="lazy" alt="Boats on a sandy beach seen from above">
+            <div class="dest-card__body">
+              <h3>Paradise Beach, Bantayan Island</h3>
+              <p class="dest-card__price">$550.16</p>
+              <p class="dest-card__place">Rome, Italy</p>
+              <p class="rating"><span>4.8</span><svg class="icon icon--small" aria-hidden="true"><use href="#i-star"></use></svg><span class="visually-hidden">out of 5</span></p>
+            </div>
+          </li>
+          <li class="dest-card">
+            <img src="img/dest-ocean.jpg" srcset="img/dest-ocean.jpg 374w, img/dest-ocean@2x.jpg 748w" sizes="(min-width: 1200px) 373px, (min-width: 720px) 33vw, 85vw" width="374" height="350" loading="lazy" alt="A striped lionfish swimming in turquoise water">
+            <div class="dest-card__body">
+              <h3>Ocean with full of Colors</h3>
+              <p class="dest-card__price">$20.99</p>
+              <p class="dest-card__place">Maldives</p>
+              <p class="rating"><span>4.5</span><svg class="icon icon--small" aria-hidden="true"><use href="#i-star"></use></svg><span class="visually-hidden">out of 5</span></p>
+            </div>
+          </li>
+          <li class="dest-card">
+            <img src="img/dest-mountain.jpg" srcset="img/dest-mountain.jpg 373w, img/dest-mountain@2x.jpg 747w" sizes="(min-width: 1200px) 373px, (min-width: 720px) 33vw, 85vw" width="373" height="350" loading="lazy" alt="Misty mountain ridges above the clouds">
+            <div class="dest-card__body">
+              <h3>Mountain View, Above the cloud</h3>
+              <p class="dest-card__price">$150.99</p>
+              <p class="dest-card__place">United Arab Emeries</p>
+              <p class="rating"><span>5.0</span><svg class="icon icon--small" aria-hidden="true"><use href="#i-star"></use></svg><span class="visually-hidden">out of 5</span></p>
+            </div>
+          </li>
+          <li class="dest-card">
+            <img src="img/dest-santorini.jpg" srcset="img/dest-santorini.jpg 272w, img/dest-santorini@2x.jpg 544w" sizes="(min-width: 1200px) 373px, (min-width: 720px) 33vw, 85vw" width="272" height="262" loading="lazy" alt="A whitewashed street leading down to the blue sea">
+            <div class="dest-card__body">
+              <h3>White Streets of Oia Village</h3>
+              <p class="dest-card__price">$340.00</p>
+              <p class="dest-card__place">Santorini, Greece</p>
+              <p class="rating"><span>4.9</span><svg class="icon icon--small" aria-hidden="true"><use href="#i-star"></use></svg><span class="visually-hidden">out of 5</span></p>
+            </div>
+          </li>
+          <li class="dest-card">
+            <img src="img/dest-alps.jpg" srcset="img/dest-alps.jpg 272w, img/dest-alps@2x.jpg 544w" sizes="(min-width: 1200px) 373px, (min-width: 720px) 33vw, 85vw" width="272" height="299" loading="lazy" alt="A hiker resting on a rock with snowy peaks behind">
+            <div class="dest-card__body">
+              <h3>Alpine Trail, Snowy Peaks</h3>
+              <p class="dest-card__price">$210.50</p>
+              <p class="dest-card__place">Swiss Alps</p>
+              <p class="rating"><span>4.7</span><svg class="icon icon--small" aria-hidden="true"><use href="#i-star"></use></svg><span class="visually-hidden">out of 5</span></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Travel point ===== -->
+    <section class="travel-point section" aria-labelledby="travel-point-title">
+      <div class="travel-point__inner">
+        <div class="travel-point__media">
+          <img src="img/traveler.jpg" srcset="img/traveler.jpg 800w, img/traveler@2x.jpg 1600w" sizes="(min-width: 1200px) 55vw, 100vw" width="800" height="685" loading="lazy" alt="A smiling traveller with a backpack sitting on a suitcase">
+        </div>
+        <div class="travel-point__text">
+          <div class="section-head">
+            <p class="eyebrow">Travel point</p>
+            <h2 class="section-title" id="travel-point-title">We helping you find your dream location</h2>
+          </div>
+          <p class="lead">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+          <img class="travel-point__badge" src="img/ticket-badge.png" srcset="img/ticket-badge@2x.png 2x" width="112" height="112" loading="lazy" alt="">
+          <ul class="stats">
+            <li><strong>500+</strong> Holiday Package</li>
+            <li><strong>100</strong> Luxury Hotel</li>
+            <li><strong>7</strong> Premium Airlines</li>
+            <li><strong>2k+</strong> Happy Customer</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Преимущества ===== -->
+    <section class="features section" id="features" aria-labelledby="features-title">
+      <div class="container features__inner">
+        <div class="features__text">
+          <div class="section-head">
+            <p class="eyebrow">Key features</p>
+            <h2 class="section-title" id="features-title">We offer best services</h2>
+          </div>
+          <p class="lead">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+          <ul class="feature-list">
+            <li class="feature">
+              <img src="img/feature-pin.png" srcset="img/feature-pin@2x.png 2x" width="102" height="102" loading="lazy" alt="">
+              <div>
+                <h3>We offer best services</h3>
+                <p>Lorem Ipsum is not simply random text</p>
+              </div>
+            </li>
+            <li class="feature feature--active">
+              <img src="img/feature-calendar.png" srcset="img/feature-calendar@2x.png 2x" width="102" height="102" loading="lazy" alt="">
+              <div>
+                <h3>Schedule your trip</h3>
+                <p>It has roots in a piece of classical</p>
+              </div>
+            </li>
+            <li class="feature">
+              <img src="img/feature-coupon.png" srcset="img/feature-coupon@2x.png 2x" width="102" height="102" loading="lazy" alt="">
+              <div>
+                <h3>Get discounted coupons</h3>
+                <p>Lorem Ipsum is not simply random text</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="features__media">
+          <img src="img/features-photos.jpg" srcset="img/features-photos.jpg 596w, img/features-photos@2x.jpg 1192w" sizes="(min-width: 1200px) 41vw, 90vw" width="596" height="866" loading="lazy" alt="A black wooden church on a field and a surfer riding a wave">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Отзывы ===== -->
+    <section class="testimonials section" aria-labelledby="testimonials-title">
+      <div class="container testimonials__inner">
+        <div class="section-head section-head--center">
+          <p class="eyebrow">Testimonials</p>
+          <h2 class="section-title" id="testimonials-title">Trust our clients</h2>
+        </div>
+
+        <div class="testimonials__slides" aria-live="polite">
+          <figure class="testimonial">
+            <img class="testimonial__avatar" src="img/avatar-mark.png" srcset="img/avatar-mark@2x.png 2x" width="127" height="127" loading="lazy" alt="">
+            <figcaption><strong>Mark Smith</strong> / Travel Enthusiast</figcaption>
+            <p class="testimonial__stars"><span class="visually-hidden">Rated 5 out of 5</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            </p>
+            <blockquote><p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p></blockquote>
+          </figure>
+          <figure class="testimonial" hidden>
+            <span class="testimonial__avatar testimonial__avatar--initials" aria-hidden="true">AL</span>
+            <figcaption><strong>Anna Lee</strong> / Weekend Explorer</figcaption>
+            <p class="testimonial__stars"><span class="visually-hidden">Rated 5 out of 5</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            </p>
+            <blockquote><p>Booking took five minutes, and every hotel on the route was exactly like the photos. The best trip planner I have used.</p></blockquote>
+          </figure>
+          <figure class="testimonial" hidden>
+            <span class="testimonial__avatar testimonial__avatar--initials testimonial__avatar--orange" aria-hidden="true">JR</span>
+            <figcaption><strong>James Reed</strong> / Family Traveller</figcaption>
+            <p class="testimonial__stars"><span class="visually-hidden">Rated 5 out of 5</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            </p>
+            <blockquote><p>The weather forecast and the discount coupons saved our family holiday. We are already planning the next one.</p></blockquote>
+          </figure>
+        </div>
+
+        <div class="testimonials__controls">
+          <button class="arrow" type="button" data-slide="-1" aria-label="Previous testimonial">
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+          </button>
+          <div class="dots">
+            <button type="button" class="dot" aria-label="Show testimonial 1" aria-current="true"></button>
+            <button type="button" class="dot" aria-label="Show testimonial 2"></button>
+            <button type="button" class="dot" aria-label="Show testimonial 3"></button>
+          </div>
+          <button class="arrow arrow--primary" type="button" data-slide="1" aria-label="Next testimonial">
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Рассылка ===== -->
+    <section class="newsletter section" id="newsletter" aria-labelledby="newsletter-title">
+      <div class="container">
+        <div class="newsletter__box">
+          <img class="newsletter__dots" src="img/dots.png" srcset="img/dots@2x.png 2x" width="193" height="183" loading="lazy" alt="">
+          <p class="eyebrow">Subscribe to our newsletter</p>
+          <h2 class="newsletter__title" id="newsletter-title">Prepare yourself &amp; let’s explore the beauty of the world</h2>
+          <form class="newsletter__form" action="#" novalidate>
+            <label class="visually-hidden" for="email">Your email</label>
+            <div class="input-wrap">
+              <img src="img/icon-mail.png" srcset="img/icon-mail@2x.png 2x" width="31" height="28" alt="">
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="Your Email" required>
+            </div>
+            <button class="button button--primary button--large" type="submit">Subscribe</button>
+            <p class="newsletter__status" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Подвал ===== -->
+  <footer class="site-footer" id="contact">
+    <img class="site-footer__contour" src="img/contour.png" srcset="img/contour@2x.png 2x" width="122" height="285" loading="lazy" alt="">
+    <div class="container site-footer__inner">
+      <div class="site-footer__about">
+        <a class="logo" href="#top" aria-label="Travlog — back to top">
+          <img src="img/logo-mark.png" srcset="img/logo-mark@2x.png 2x" width="42" height="42" alt="">
+          <span>Travlog</span>
+        </a>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+        <ul class="socials">
+          <li><a href="https://www.facebook.com/" aria-label="Travlog on Facebook"><img src="img/social-facebook.png" srcset="img/social-facebook@2x.png 2x" width="34" height="34" alt=""></a></li>
+          <li><a href="https://x.com/" aria-label="Travlog on X (Twitter)"><img src="img/social-twitter.png" srcset="img/social-twitter@2x.png 2x" width="34" height="34" alt=""></a></li>
+          <li><a href="https://www.instagram.com/" aria-label="Travlog on Instagram"><img src="img/social-instagram.png" srcset="img/social-instagram@2x.png 2x" width="34" height="34" alt=""></a></li>
+        </ul>
+      </div>
+
+      <details class="footer-col">
+        <summary>Company <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></summary>
+        <ul>
+          <li><a href="#top">About</a></li>
+          <li><a href="#top">Career</a></li>
+          <li><a href="#top">Mobile</a></li>
+        </ul>
+      </details>
+      <details class="footer-col">
+        <summary>Contact <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></summary>
+        <ul>
+          <li><a href="#features">Why Travlog?</a></li>
+          <li><a href="#services">Partner with us</a></li>
+          <li><a href="#testimonials-title">FAQ’s</a></li>
+          <li><a href="#destinations">Blog</a></li>
+        </ul>
+      </details>
+      <details class="footer-col">
+        <summary>Meet Us <svg class="icon" aria-hidden="true"><use href="#i-chevron"></use></svg></summary>
+        <ul>
+          <li><a href="tel:+0092123456789">+00 92 1234 56789</a></li>
+          <li><a href="mailto:info@travlog.com">info@travlog.com</a></li>
+          <li>205. R Street, New York BD23200</li>
+        </ul>
+      </details>
+    </div>
+    <p class="container site-footer__credit">Educational project built from the free Figma design “Responsive Travel Landing Page” by uixdesignacademy (CC BY 4.0). Travlog is not a real company.</p>
+  </footer>
+</body>
+</html>
